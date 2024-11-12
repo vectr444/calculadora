@@ -1,27 +1,28 @@
-# React + TypeScript + Vite
+# Calculadora - Projeto Senai
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto consiste em uma calculadora simples, desenvolvida para auxiliar o curso de Teste de Sistemas. A calculadora implementa operações básicas de adição, subtração, multiplicação e divisão, proporcionando uma interface e código simples e funcional para a realização desses cálculos.
 
-Currently, two official plugins are available:
+# Funcionalidades
+A calculadora suporta as seguintes funcionalidades:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adição: Soma de dois números.
+- Subtração: Subtração de dois números.
+- Multiplicação: Multiplicação de dois números.
+- Divisão: Divisão de dois números (com verificação de divisão por zero).
+- Limpeza da tela: Opção para limpar os valores digitados.
 
-## Expanding the ESLint configuration
+# Testes
+Para garantir que o comportamento da calculadora esteja correto, foram implementados testes automatizados utilizando o Jest e Cypress. Os testes abrangem as operações principais da calculadora, como adição, subtração, multiplicação e divisão, incluindo verificações de casos especiais, como divisão por zero.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Jest: Framework de testes para realizar testes unitários.
+- Cypress: Framework de testes end-to-end (E2E) para simular interações do usuário com a interface.
 
-- Configure the top-level `parserOptions` property like this:
+Para rodar os testes unitários com o Jest:
+- npm test
+  
+Para rodar os testes E2E com o Cypress:
+- npx cypress open
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+# Tecnologias Utilizadas - React + TypeScript + Vite
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Este template oferece uma configuração mínima para iniciar um projeto com React e TypeScript utilizando o Vite. Ele vem com suporte ao Hot Module Replacement (HMR) para atualização instantânea durante o desenvolvimento e configurações básicas de ESLint para garantir um código de qualidade.
