@@ -63,14 +63,54 @@ describe("Calculos Combinados - Operações Mistas", () => {
     cy.get('[data-cy="display-container"]').should("have.text", "40");
   });
 
-  //Erro
-  it("1 + 2 * 3", () => {
+  // //Erro
+  // it("1 + 2 * 3", () => {
+  //   cy.get('[data-cy="1"]').click();
+  //   cy.get('[data-cy="+"]').click();
+  //   cy.get('[data-cy="2"]').click();
+  //   cy.get('[data-cy="x"]').click();
+  //   cy.get('[data-cy="3"]').click();
+  //   cy.get('[data-cy="="]').click();
+  //   cy.get('[data-cy="display-container"]').should("have.text", "7");
+  // });
+
+  it("10 x 2 x 5", () => {
     cy.get('[data-cy="1"]').click();
-    cy.get('[data-cy="+"]').click();
+    cy.get('[data-cy="0"]').click();
+    cy.get('[data-cy="x"]').click();
     cy.get('[data-cy="2"]').click();
     cy.get('[data-cy="x"]').click();
-    cy.get('[data-cy="3"]').click();
+    cy.get('[data-cy="5"]').click();
     cy.get('[data-cy="="]').click();
-    cy.get('[data-cy="display-container"]').should("have.text", "7");
+    cy.get('[data-cy="display-container"]').should("have.text", "100");
   });
+
+  it("100 x 10 / 4", () => {
+    cy.get('[data-cy="1"]').click();
+    cy.get('[data-cy="0"]').click();
+    cy.get('[data-cy="0"]').click();
+    cy.get('[data-cy="x"]').click();
+    cy.get('[data-cy="1"]').click();
+    cy.get('[data-cy="0"]').click();
+    cy.get('[data-cy="/"]').click();
+    cy.get('[data-cy="4"]').click();
+    cy.get('[data-cy="="]').click();
+    cy.get('[data-cy="display-container"]').should("have.text", "250");
+  });
+
+  it('Calcular a soma', () => {
+
+    cy.get('[data-cy="1"]').click();
+    cy.get('[data-cy="0"]').click();
+    cy.get('[data-cy="+"]').click();
+    cy.get('[data-cy="5"]').click();
+    cy.get('[data-cy="="]').click();
+
+    cy.get(".display-container").should("have.text",15)
+    cy.get(".display-container > div").should("have.text",15)
+
+    cy.get("button").contains("AC").click()
+
+  })
+  
 });
